@@ -4,9 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="index.js"></script>
   </head>
   <body>
-    <div class="content"></div>
+    <div class="app h-screen w-screen font-sans">
+      <header
+        class="fixed top-2 left-1/2 -translate-x-1/2 px-3 py-2 flex flex-col justify-center items-center backdrop-blur-lg bg-white/30 rounded-md shadow-sm transition-all"
+      >
+        <div class="flex gap-2">
+          <label for="cityInput" class="hidden"></label>
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Where's the sun at?"
+            class="bg-white/50 rounded-2xl px-4 py-1 focus:outline-none text-slate-600 font-normal text-base lg:text-lg placeholder:text-gray-400 border-2 border-transparent focus:border-2 focus:border-white"
+          />
+          <button
+            id="citySearch"
+            type="button"
+            class="bg-white/50 rounded-2xl px-4 py-1 text-gray-500 font-medium text-base lg:text-lg border-2 border-transparent active:border-2 active:border-white active:text-orange-600 transition-all duration-75"
+          >
+            Search
+          </button>
+        </div>
+        <p
+          id="alertMsg"
+          class="text-red-600 whitespace-nowrap self-start pl-2 h-0 collapse transition-all"
+        ></p>
+      </header>
+      <main
+        class="grid grid-cols-1 grid-flow-row md:grid-rows-[6fr_4fr] text-slate-100 font-bold text-3xl h-screen"
+      >
+        <div
+          id="currentDay"
+          class="flex justify-center h-[89vh] lg:h-auto lg:pt-16 flex-col items-center gap-5 border-b-2 border-neutral-50 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12"
+        ></div>
+        <div
+          id="weeklyForecast"
+          class="grid grid-cols-1 grid-rows-6 lg:grid-cols-7 lg:grid-rows-1 h-100"
+        ></div>
+      </main>
+    </div>
   </body>
 </html>

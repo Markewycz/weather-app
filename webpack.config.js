@@ -9,6 +9,16 @@ const config = {
     filename: '[name][contenthash].js',
     clean: true,
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
   devtool: 'source-map',
   module: {
     rules: [
@@ -23,14 +33,14 @@ const config = {
         },
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Weather App',
       filename: 'index.html',
       template: './src/index.html',
     }),
