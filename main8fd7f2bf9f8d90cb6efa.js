@@ -38,7 +38,7 @@ var App = /*#__PURE__*/function () {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("http://api.weatherapi.com/v1/forecast.json?key=792bd8a022954066b5f200041231308&q=".concat(city, "&days=7"), {
+              return fetch("https://api.weatherapi.com/v1/forecast.json?key=792bd8a022954066b5f200041231308&q=".concat(city, "&days=7"), {
                 mode: 'cors'
               });
             case 2:
@@ -1983,4 +1983,4 @@ document.addEventListener('DOMContentLoaded', ui.loadHomepage.bind(ui));
 
 /******/ })()
 ;
-//# sourceMappingURL=main59513dacdbb0c76e94ce.js.map
+//# sourceMappingURL=main8fd7f2bf9f8d90cb6efa.js.map
