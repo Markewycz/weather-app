@@ -1,7 +1,7 @@
 export default class App {
   fetchData = async city => {
     const forecast = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=792bd8a022954066b5f200041231308&q=${city}&days=7`,
+      `https://api.weatherapi.com/v1/forecast.json?key=792bd8a022954066b5f200041231308&q=${city}&days=7`,
       {
         mode: 'cors',
       }
